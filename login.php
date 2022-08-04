@@ -22,7 +22,7 @@
       if($loginuser > 0 ) {
         echo "You have successfully logged in";
         $_SESSION['userId'] = $loginuser->aff_id;
-        header('Location: http://localhost/affiliate2/index.php');
+        header('Location: https://affiliate.traveliq.in/index.php');
       } else {
         // echo "The login email or password is wrong";
         $wrongLogin = "The login email or password is wrong";
@@ -64,7 +64,7 @@
 </head>
 <body>
 <div class="text-center container p-3">
-  <a class="text-center" href="https://localhost/affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
+  <a class="text-center" href="https://affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
 </div>
 <div class="d-sm-flex justify-content-center align-items-center" style="height: 400px">
 

@@ -59,7 +59,7 @@
                   $insertsql = 'INSERT into user_details(aff_fullname, aff_email, aff_pass, caff_pass, aff_mobile, aff_pincode, aff_state, aff_city, aff_address, aff_accnumber, aff_accname, aff_ifsccode, aff_pancard, aff_manualtime, aff_uid) VALUES(?, ?, ? , ?, ?, ? , ?, ?, ? , ?, ?, ? , ?,?,? ) ';
                   $stmt = $pdo -> prepare($insertsql);
                   $stmt -> execute( [ $aff_fullname, $aff_email, $aff_pass, $caff_pass, $aff_mobile, $aff_pincode, $aff_state, $aff_city, $aff_address, $aff_accnumber, $aff_accname, $aff_ifsccode, $aff_pancard, $aff_manualtime, $fuid] );
-                  header('Location: http://localhost/affiliate2/login.php'); 
+                  header('Location: https://affiliate.traveliq.in/login.php'); 
 
               if($resultQuery)
               {
@@ -78,7 +78,7 @@
               $insertsql = 'INSERT into user_details(aff_fullname, aff_email, aff_pass, caff_pass, aff_mobile, aff_pincode, aff_state, aff_city, aff_address, aff_accnumber, aff_accname, aff_ifsccode, aff_pancard, aff_manualtime, aff_uid) VALUES(? , ?, ?, ? , ?, ?, ? , ?, ?, ? , ?, ?, ? , ?,?,? ) ';
               $stmt = $pdo -> prepare($insertsql);
               $stmt -> execute( [ $aff_fullname, $aff_email, $aff_pass, $caff_pass, $aff_mobile, $aff_pincode, $aff_state, $aff_city, $aff_address, $aff_accnumber, $aff_accname, $aff_ifsccode, $aff_pancard, $aff_manualtime, $fuid] );
-              header('Location: http://localhost/affiliate2/login.php'); 
+              header('Location: https://affiliate.traveliq.in/login.php'); 
           if($stmt)
           {
               echo "<br>New record added!<br>Name: ".$fuid;
@@ -194,7 +194,7 @@
 </head>
 <body>
 <div class="text-center container p-3">
-<a class="text-center" href="https://localhost/affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
+<a class="text-center" href="https://affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
 </div>
 <div class="d-sm-flex justify-content-center align-items-center" style="height: 550px">
 
@@ -205,7 +205,7 @@
       <div class="card bg-light text-dark rounded mt-3">
           <div class="card-header"> <h3>Affliate Registration  </h3></div>
             <div class="card-body text-light p-5" style="background-color:#16407c">
-            <form action="http://localhost/affiliate2/registration.php" method="POST">
+            <form action="https://affiliate.traveliq.in/registration.php" method="POST">
               <div class="row">
                 <div class="col-sm">
                   <div class="form-group">
