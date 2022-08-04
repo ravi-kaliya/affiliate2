@@ -76,8 +76,10 @@
                           
               <div class="container mt-3">
                   <div class="card" style="background-color:#16407c">
-                  <div class="card-header bg-light mb-1"><h3>Affiliate Login</h3></div>
+                  <div class="card-header bg-light mb-1"><h3>Register successfully</h3></div>
+                  <div class="container text-light">Please logins below to get referral link</div>
                   <div class="card-body p-4" >
+                    
                       <form action="login.php" method="POST">
                       <div class="form-group text-light">
                           <label for="email"> Email Address </label>

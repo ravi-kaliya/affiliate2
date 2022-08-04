@@ -10,10 +10,10 @@
     $aff_pas =  $_POST["aff_pass"];
     $caff_pas = $_POST["caff_pass"];
     $aff_mobile = filter_var( $_POST["aff_mobile"], FILTER_SANITIZE_STRING );
-    $aff_pincode = filter_var( $_POST["aff_pincode"], FILTER_SANITIZE_STRING );
-    $aff_state = filter_var( $_POST["aff_state"], FILTER_SANITIZE_STRING );
-    $aff_city = filter_var( $_POST["aff_city"], FILTER_SANITIZE_STRING );
-    $aff_address = filter_var( $_POST["aff_address"], FILTER_SANITIZE_STRING );
+    $aff_pincode = "";
+    $aff_state = "";
+    $aff_city = "";
+    $aff_address = "";
     $aff_accnumber = "";
     $aff_accname = "";
     $aff_ifsccode = "";
@@ -22,6 +22,7 @@
     $aff_manualtime = date("l d-m-Y H:i:s");
     $aff_pass = base64_encode($aff_pas);
     $caff_pass = base64_encode($caff_pas);
+    $caff_pass1 = "";
     
 
 
@@ -58,8 +59,8 @@
       
                   $insertsql = 'INSERT into user_details(aff_fullname, aff_email, aff_pass, caff_pass, aff_mobile, aff_pincode, aff_state, aff_city, aff_address, aff_accnumber, aff_accname, aff_ifsccode, aff_pancard, aff_manualtime, aff_uid) VALUES(?, ?, ? , ?, ?, ? , ?, ?, ? , ?, ?, ? , ?,?,? ) ';
                   $stmt = $pdo -> prepare($insertsql);
-                  $stmt -> execute( [ $aff_fullname, $aff_email, $aff_pass, $caff_pass, $aff_mobile, $aff_pincode, $aff_state, $aff_city, $aff_address, $aff_accnumber, $aff_accname, $aff_ifsccode, $aff_pancard, $aff_manualtime, $fuid] );
-                  header('Location: https://affiliate.traveliq.in/login.php'); 
+                  $stmt -> execute( [ $aff_fullname, $aff_email, $aff_pass, $caff_pass1, $aff_mobile, $aff_pincode, $aff_state, $aff_city, $aff_address, $aff_accnumber, $aff_accname, $aff_ifsccode, $aff_pancard, $aff_manualtime, $fuid] );
+                  header('Location: https://affiliate.traveliq.in/reg-success.php'); 
 
               if($resultQuery)
               {
@@ -77,8 +78,8 @@
           $fuid = "10001";
               $insertsql = 'INSERT into user_details(aff_fullname, aff_email, aff_pass, caff_pass, aff_mobile, aff_pincode, aff_state, aff_city, aff_address, aff_accnumber, aff_accname, aff_ifsccode, aff_pancard, aff_manualtime, aff_uid) VALUES(? , ?, ?, ? , ?, ?, ? , ?, ?, ? , ?, ?, ? , ?,?,? ) ';
               $stmt = $pdo -> prepare($insertsql);
-              $stmt -> execute( [ $aff_fullname, $aff_email, $aff_pass, $caff_pass, $aff_mobile, $aff_pincode, $aff_state, $aff_city, $aff_address, $aff_accnumber, $aff_accname, $aff_ifsccode, $aff_pancard, $aff_manualtime, $fuid] );
-              header('Location: https://affiliate.traveliq.in/login.php'); 
+              $stmt -> execute( [ $aff_fullname, $aff_email, $aff_pass, $caff_pass1, $aff_mobile, $aff_pincode, $aff_state, $aff_city, $aff_address, $aff_accnumber, $aff_accname, $aff_ifsccode, $aff_pancard, $aff_manualtime, $fuid] );
+              header('Location: https://affiliate.traveliq.in/reg-success.php'); 
           if($stmt)
           {
               echo "<br>New record added!<br>Name: ".$fuid;
@@ -96,41 +97,41 @@
       // Mail Fir Start------------------------------------------------------------------------------------------------
       
       
-                    $to = $aff_email; // change here
-                    $subject = 'Affiliate Details of '.$aff_fullname; // change here
-                    $from = 'support@traveliq.in'; // change here
+    //                 $to = $aff_email; // change here
+    //                 $subject = 'Affiliate Details of '.$aff_fullname; // change here
+    //                 $from = 'support@traveliq.in'; // change here
 
-                    // To send HTML mail, the Content-type header must be set
-                    $headers  = 'MIME-Version: 1.0' . "\r\n";
-                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    //                 // To send HTML mail, the Content-type header must be set
+    //                 $headers  = 'MIME-Version: 1.0' . "\r\n";
+    //                 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-                    // Create email headers
-                    $headers .= 'From: '.$from."\r\n".
-                    'Reply-To: '.$from."\r\n" .
-                    'X-Mailer: PHP/' . phpversion();
+    //                 // Create email headers
+    //                 $headers .= 'From: '.$from."\r\n".
+    //                 'Reply-To: '.$from."\r\n" .
+    //                 'X-Mailer: PHP/' . phpversion();
                     
                     
-                    // Compose a simple HTML email message
-                    $message = 'Hi '.$aff_fullname.'!<br>';
-                    $message .= '<br>Congratulations you have successfully submitted your IRCTC affiliate process with TraveliQ.<br> Get your affiliate dashboard details as mentioned below.<br>';
-                    $message .= 'Affiliate Login Link: https://affiliate.traveliq.in/login.php<br>';
-                    $message .= 'Affiliate Email: '.$aff_email.'<br>';
-                    $message .= 'Affiliate Password: '.$aff_pas.'<br>';
+    //                 // Compose a simple HTML email message
+    //                 $message = 'Hi '.$aff_fullname.'!<br>';
+    //                 $message .= '<br>Congratulations you have successfully submitted your IRCTC affiliate process with TraveliQ.<br> Get your affiliate dashboard details as mentioned below.<br>';
+    //                 $message .= 'Affiliate Login Link: https://affiliate.traveliq.in/login.php<br>';
+    //                 $message .= 'Affiliate Email: '.$aff_email.'<br>';
+    //                 $message .= 'Affiliate Password: '.$aff_pas.'<br>';
 
             
 
-     // Sending email
-                if (mail($to, $subject, $message, $headers)) {
+    //  // Sending email
+    //             if (mail($to, $subject, $message, $headers)) {
                     
-                    header('Location: https://affiliate.traveliq.in/login.php');
-                    exit();
+    //                 header('Location: https://affiliate.traveliq.in/login.php');
+    //                 exit();
                         
-                }
-                else{
+    //             }
+    //             else{
                 
-                    echo 'Unable to send email. Please try again.';
+    //                 echo 'Unable to send email. Please try again.';
                     
-                }
+    //             }
 
     // Mail Fir End------------------------------------------------------------------------------------------------
         
@@ -196,7 +197,7 @@
 <div class="text-center container p-3">
 <a class="text-center" href="https://affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
 </div>
-<div class="d-sm-flex justify-content-center align-items-center" style="height: 550px">
+<div class="d-sm-flex justify-content-center align-items-center" style="height: 400px">
 
   <div class="container">
     <div class="row">
@@ -250,43 +251,8 @@
                 </div>
               </div>
 
-              <div class="row mt-3">
-                <div class="col-sm">
-                  <div class="form-group">
-                    <label for="aff_pincode"> Pin Code </label>
-                    <input required type="number" name="aff_pincode" value="<?php if(isset( $_POST['register'])) echo $aff_pincode?>" class="form-control" />
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="form-group">
-                    <label for="aff_state"> State  </label>
-                    <input required type="text" name="aff_state" value="<?php if(isset( $_POST['register'])) echo $aff_state?>" class="form-control" />
-                    </br>
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="form-group">
-                    <label for="aff_city"> City  </label>
-                    <input required type="text" name="aff_city" value="<?php if(isset( $_POST['register'])) echo $aff_city?>" class="form-control" />
-                    </br>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-sm">
-                  <div class="form-group">
-                    <label for="aff_address"> Full Address </label>
-                    <input required type="text" name="aff_address" value="<?php if(isset( $_POST['register'])) echo $aff_address?>" class="form-control" />
-                    </br>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="row">
                
-              <div class="row">
+              <div class="row mt-3">
                 <div class="col-sm">
                   <div class="form-group">
                     <button name="register" type="submit" class="btn text-light" style="background-color:#eb5228">Register</button>

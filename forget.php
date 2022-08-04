@@ -24,43 +24,43 @@
         $forget_pass = base64_decode($forget_pass);
         echo $forget_pass;
         
-        // Mail to user
-              // Mail Fir Start------------------------------------------------------------------------------------------------
+    //     // Mail to user
+    //           // Mail Fir Start------------------------------------------------------------------------------------------------
       
       
-                    $to = $forget_email; // change here
-                    $subject = 'Affiliate Details of '.$forget_fullname; // change here
-                    $from = 'support@traveliq.in'; // change here
+    //                 $to = $forget_email; // change here
+    //                 $subject = 'Affiliate Details of '.$forget_fullname; // change here
+    //                 $from = 'support@traveliq.in'; // change here
 
-                    // To send HTML mail, the Content-type header must be set
-                    $headers  = 'MIME-Version: 1.0' . "\r\n";
-                    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    //                 // To send HTML mail, the Content-type header must be set
+    //                 $headers  = 'MIME-Version: 1.0' . "\r\n";
+    //                 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-                    // Create email headers
-                    $headers .= 'From: '.$from."\r\n".
-                    'Reply-To: '.$from."\r\n" .
-                    'X-Mailer: PHP/' . phpversion();
+    //                 // Create email headers
+    //                 $headers .= 'From: '.$from."\r\n".
+    //                 'Reply-To: '.$from."\r\n" .
+    //                 'X-Mailer: PHP/' . phpversion();
                     
                     
-                    // Compose a simple HTML email message
-                    $message = 'Hi '.$forget_fullname.'!<br>';
-                    $message .= '<br>As per your requirement, Find below the login details<br>';
-                    $message .= 'Affiliate Login Link: https://affiliate.traveliq.in/login.php<br>';
-                    $message .= 'Affiliate Email: '.$forget_email.'<br>';
-                    $message .= 'Affiliate Password: '.$forget_pass.'<br>';
+    //                 // Compose a simple HTML email message
+    //                 $message = 'Hi '.$forget_fullname.'!<br>';
+    //                 $message .= '<br>As per your requirement, Find below the login details<br>';
+    //                 $message .= 'Affiliate Login Link: https://affiliate.traveliq.in/login.php<br>';
+    //                 $message .= 'Affiliate Email: '.$forget_email.'<br>';
+    //                 $message .= 'Affiliate Password: '.$forget_pass.'<br>';
 
             
 
-     // Sending email
-                    if (mail($to, $subject, $message, $headers)) {
+    //  // Sending email
+    //                 if (mail($to, $subject, $message, $headers)) {
                     
-                    header('Location: https://affiliate.traveliq.in/login.php');
-                    exit();
-                } else {
-                echo 'Unable to send email. Please try again.';
-            }
+    //                 header('Location: https://affiliate.traveliq.in/login.php');
+    //                 exit();
+    //             } else {
+    //             echo 'Unable to send email. Please try again.';
+    //         }
 
-    // Mail Fir End------------------------------------------------------------------------------------------------
+    // // Mail Fir End------------------------------------------------------------------------------------------------
         
         
         
@@ -92,7 +92,7 @@
 </head>
 <body>
 <div class="text-center container p-3">
-    <a class="text-center" href="https://localhost/affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
+    <a class="text-center" href="https://affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
 </div>
 <div class="d-sm-flex justify-content-center align-items-center" style="height: 300px">
 

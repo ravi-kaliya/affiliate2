@@ -64,7 +64,7 @@
 </head>
 <body>
 <div class="text-center container p-3">
-  <a class="text-center" href="https://localhost/affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
+  <a class="text-center" href="https://affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
 </div>
 <div class="d-sm-flex justify-content-center align-items-center" style="height: 400px">
 
@@ -97,7 +97,7 @@
                       </form>
                       <br>
                       <div class="container text-light p-1">
-                        <h6> <a class="text-light" href="https://affiliate.traveliq.in/forget.php">Forget Password</a></h6>
+                        <!-- <h6> <a class="text-light" href="https://affiliate.traveliq.in/forget.php">Forget Password</a></h6> -->
                       </div>
                       <div class="container text-light p-1" style="background-color:#16407c">
                         <h6> Don't have an account? <a class="text-light" href="https://affiliate.traveliq.in/registration.php">Signup</a></h6>
