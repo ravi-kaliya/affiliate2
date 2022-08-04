@@ -99,7 +99,7 @@ $pdo = null;
 </head>
 <body>
 <div class="text-center container p-3">
-    <a class="text-center" href="https://localhost/affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
+    <a class="text-center" href="https://affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
 </div>
 
 <div class="container-sm mt-2">
