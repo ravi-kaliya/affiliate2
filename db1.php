@@ -1,8 +1,8 @@
 <?php
 
   $host = 'localhost';
-  $user = 'root';
-  $password = '';
+  $user = 'traveliqcp_wp750';
+  $password = 'pi6S[U.4L8';
   $dbname = 'traveliqcp_wp750';
 
   //set DSN -  Database Source Name

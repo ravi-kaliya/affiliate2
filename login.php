@@ -22,7 +22,7 @@
       if($loginuser > 0 ) {
         echo "You have successfully logged in";
         $_SESSION['userId'] = $loginuser->aff_id;
-        header('Location: https://affiliate.traveliq.in/index.php');
+        header('Location: http://localhost/affiliate2/index.php');
       } else {
         // echo "The login email or password is wrong";
         $wrongLogin = "The login email or password is wrong";

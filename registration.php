@@ -14,10 +14,10 @@
     $aff_state = filter_var( $_POST["aff_state"], FILTER_SANITIZE_STRING );
     $aff_city = filter_var( $_POST["aff_city"], FILTER_SANITIZE_STRING );
     $aff_address = filter_var( $_POST["aff_address"], FILTER_SANITIZE_STRING );
-    $aff_accnumber = filter_var( $_POST["aff_accnumber"], FILTER_SANITIZE_STRING );
-    $aff_accname = filter_var( $_POST["aff_accname"], FILTER_SANITIZE_STRING );
-    $aff_ifsccode = filter_var( $_POST["aff_ifsccode"], FILTER_SANITIZE_STRING );
-    $aff_pancard = filter_var( $_POST["aff_pancard"], FILTER_SANITIZE_STRING );
+    $aff_accnumber = "";
+    $aff_accname = "";
+    $aff_ifsccode = "";
+    $aff_pancard = "";
     // $aff_agentid = filter_var( $_POST["aff_agentid"], FILTER_SANITIZE_STRING );
     $aff_manualtime = date("l d-m-Y H:i:s");
     $aff_pass = base64_encode($aff_pas);
@@ -59,7 +59,7 @@
                   $insertsql = 'INSERT into user_details(aff_fullname, aff_email, aff_pass, caff_pass, aff_mobile, aff_pincode, aff_state, aff_city, aff_address, aff_accnumber, aff_accname, aff_ifsccode, aff_pancard, aff_manualtime, aff_uid) VALUES(?, ?, ? , ?, ?, ? , ?, ?, ? , ?, ?, ? , ?,?,? ) ';
                   $stmt = $pdo -> prepare($insertsql);
                   $stmt -> execute( [ $aff_fullname, $aff_email, $aff_pass, $caff_pass, $aff_mobile, $aff_pincode, $aff_state, $aff_city, $aff_address, $aff_accnumber, $aff_accname, $aff_ifsccode, $aff_pancard, $aff_manualtime, $fuid] );
-                  header('Location: https://affiliate.traveliq.in/login.php'); 
+                  header('Location: http://localhost/affiliate2/login.php'); 
 
               if($resultQuery)
               {
@@ -78,7 +78,7 @@
               $insertsql = 'INSERT into user_details(aff_fullname, aff_email, aff_pass, caff_pass, aff_mobile, aff_pincode, aff_state, aff_city, aff_address, aff_accnumber, aff_accname, aff_ifsccode, aff_pancard, aff_manualtime, aff_uid) VALUES(? , ?, ?, ? , ?, ?, ? , ?, ?, ? , ?, ?, ? , ?,?,? ) ';
               $stmt = $pdo -> prepare($insertsql);
               $stmt -> execute( [ $aff_fullname, $aff_email, $aff_pass, $caff_pass, $aff_mobile, $aff_pincode, $aff_state, $aff_city, $aff_address, $aff_accnumber, $aff_accname, $aff_ifsccode, $aff_pancard, $aff_manualtime, $fuid] );
-              header('Location: https://affiliate.traveliq.in/login.php'); 
+              header('Location: http://localhost/affiliate2/login.php'); 
           if($stmt)
           {
               echo "<br>New record added!<br>Name: ".$fuid;
@@ -196,7 +196,7 @@
 <div class="text-center container p-3">
 <a class="text-center" href="https://localhost/affiliate.traveliq.in/index.php"><img src="asset/img/logo.png" alt="logo" width="100px" hight="100px"></a>
 </div>
-<div class="d-sm-flex justify-content-center align-items-center" style="height: 700px">
+<div class="d-sm-flex justify-content-center align-items-center" style="height: 550px">
 
   <div class="container">
     <div class="row">
@@ -205,7 +205,7 @@
       <div class="card bg-light text-dark rounded mt-3">
           <div class="card-header"> <h3>Affliate Registration  </h3></div>
             <div class="card-body text-light p-5" style="background-color:#16407c">
-            <form action="https://affiliate.traveliq.in/registration.php" method="POST">
+            <form action="http://localhost/affiliate2/registration.php" method="POST">
               <div class="row">
                 <div class="col-sm">
                   <div class="form-group">
@@ -285,46 +285,7 @@
               </div>
 
               <div class="row">
-                <div class="col-sm">
-                  <div class="form-group">
-                    <label for="aff_accnumber"> Account Number </label>
-                    <input required type="text" name="aff_accnumber" value="<?php if(isset( $_POST['register'])) echo $aff_accnumber?>" class="form-control" />
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="form-group">
-                    <label for="aff_accname"> Account Holder Name  </label>
-                    <input required type="text" name="aff_accname" value="<?php if(isset( $_POST['register'])) echo $aff_accname?>" class="form-control" />
-                    </br>
-                  </div>
-                </div>
-                <div class="col-sm">
-                  <div class="form-group">
-                    <label for="aff_ifsccode"> IFSC Code  </label>
-                    <input required type="text" name="aff_ifsccode" value="<?php if(isset( $_POST['register'])) echo $aff_ifsccode?>" class="form-control" />
-                    </br>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-sm">
-                  <div class="form-group">
-                    <label for="aff_pancard"> Pan Number </label>
-                    <input required type="text" name="aff_pancard" value="<?php if(isset( $_POST['register'])) echo $aff_pancard?>" class="form-control" />
-                    <br />
-                  </div>
-                </div>
-                <div class="col-sm">
-                <!-- <div class="form-group">
-                    <label for="aff_agentid"> Agent ID </label>
-                    <input type="text" name="aff_agentid" value="<?php if(isset( $_POST['register'])) echo $aff_agentid?>" class="form-control" />
-                    <br />
-
-                  </div>
-                </div> -->
-              </div>
-
+               
               <div class="row">
                 <div class="col-sm">
                   <div class="form-group">

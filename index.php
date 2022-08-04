@@ -191,7 +191,7 @@ $pdo = null;
                                         </div>
                                         <div class="row text-center text-light p-2 m-1 border" style="background-color:#16407c">
                                             <div class="col">
-                                                <input type="text" class="visually-hidden" value="<?php echo $afflink;?>" id="myInput"><span onclick="myFunction()"><i class="bi bi-clipboard-check-fill"></i> Copy your affiliate link</span>
+                                                <a href="<?php echo $afflink;?>" class="color-light" style="color:white" target="_blank" rel="noopener noreferrer">Visit</a>
                                             </div>
                                         </div>
                                     </div>
