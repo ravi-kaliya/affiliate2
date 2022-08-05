@@ -141,23 +141,10 @@ $pdo = null;
                                      <button name="copyaffiliateid" type="submit" class="btn text-light" onclick="myFunction()" style="background-color:#eb5228;"><i class="bi bi-clipboard-check-fill"></i> Copy your affiliate link</button>
                                 </div>
                             </div>
-                            
                             <div class=" text-center my-3 text-dark"> 
                                 <h3><?php echo $name;?> Profile</h3>
                             </div>
-                            
-
-                            <div class="d-sm-flex justify-content-end">
-                                <div class="row">
-                                    <div class="col-lg-4 col-sm-12 p-1 text-dark"></div>
-                                    <div class="col-lg-4 col-sm-12 p-1 text-dark"></div>
-                                    <div class="col-sm-12 p-1">
-                                    <a href="http://localhost/affiliate2/update-profile.php" rel="noopener noreferrer"><button name="copyaffiliateid" type="submit" class="btn text-light" style="background-color:#16407c;"><i class="bi bi-pencil-square"></i> Edit Profile</button></a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            
+                            <form action="https://affiliate.traveliq.in/update.profile.php" method="POST">
                             <!-- <div style="overflow-x:auto;"> -->
                                 <div class="row text-center py-2">
                                     <div class="col-lg-3 col-sm-12 p-1 text-dark">
@@ -208,6 +195,10 @@ $pdo = null;
                                             </div>
                                         </div>
                                     </div>
+
+
+
+
                                     <div class="col-lg-3 col-sm-12 p-1 text-dark ">
                                         <div class="row text-center p-2 m-1 border" style="background-color:#eb5228">
                                             <div class="col text-light">
@@ -216,7 +207,12 @@ $pdo = null;
                                         </div>
                                         <div class="row text-center p-2 m-1 border" style="color:#16407c">
                                             <div class="col">
-                                                <?php echo $user1->aff_pincode;?>   
+                                                
+                                                <div class="form-group">
+                                                   <input required type="tel" name="aff_pincode" value="<?php echo $user1->aff_pincode;?>" class="form-control" />
+                                                </div>
+
+                                              
                                             </div>
                                         </div>
                                     </div>
@@ -228,7 +224,10 @@ $pdo = null;
                                         </div>
                                         <div class="row text-center p-2 m-1 border" style="color:#16407c">
                                             <div class="col">
-                                                <?php echo $user1->aff_state;?>
+                                                <div class="form-group">
+                                                    <input required type="text" name="aff_state" value="<?php echo $user1->aff_state;?>" class="form-control" />
+                                                </div>
+    
                                             </div>
                                         </div>
                                     </div>
@@ -240,7 +239,10 @@ $pdo = null;
                                         </div>
                                         <div class="row text-center p-2 m-1 border" style="color:#16407c">
                                             <div class="col">
-                                                <?php echo $user1->aff_city;?>
+                                                <div class="form-group">
+                                                    <input required type="text" name="aff_city" value="<?php echo $user1->aff_city;?>" class="form-control" />
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -252,7 +254,10 @@ $pdo = null;
                                         </div>
                                         <div class="row text-center  p-2 m-1 border" style="color:#16407c">
                                             <div class="col">
-                                                <?php echo $user1->aff_address;?>
+                                                <div class="form-group">
+                                                    <input required type="text" name="aff_address" value="<?php echo $user1->aff_address;?>" class="form-control" />
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -264,7 +269,10 @@ $pdo = null;
                                         </div>
                                         <div class="row text-center p-2 m-1 border" style="color:#16407c">
                                             <div class="col">
-                                                <?php echo $user1->aff_accnumber;?>
+                                                <div class="form-group">
+                                                    <input required type="text" name="aff_accnumber" value="<?php echo $user1->aff_accnumber;?>" class="form-control" />
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -276,7 +284,10 @@ $pdo = null;
                                         </div>
                                         <div class="row text-center p-2 m-1 border" style="color:#16407c">
                                             <div class="col">
-                                                <?php echo $user1->aff_accname;?>
+                                                <div class="form-group">
+                                                    <input required type="text" name="aff_accname" value=" <?php echo $user1->aff_accname;?>" class="form-control" />
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -288,7 +299,9 @@ $pdo = null;
                                         </div>
                                         <div class="row text-center p-2 m-1 border" style="color:#16407c">
                                             <div class="col">
-                                                <?php echo $user1->aff_ifsccode;?>
+                                                <div class="form-group">
+                                                    <input required type="text" name="aff_ifsccode" value=" <?php echo $user1->aff_ifsccode;?>" class="form-control" />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -300,13 +313,30 @@ $pdo = null;
                                         </div>
                                         <div class="row text-center p-2 m-1 border" style="color:#16407c">
                                             <div class="col">
-                                                <?php echo $user1->aff_pancard;?>
+                                                <div class="form-group">
+                                                    <input required type="text" name="aff_pancard" value="<?php echo $user1->aff_pancard;?>" class="form-control" />
+                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </div>
 
 
                                 </div>
+
+                                <div class="d-sm-flex justify-content-end">
+                                    <div class="row">
+                                        <div class="col-sm-12 p-1 text-dark"></div>
+                                        <div class="col-sm-12 p-1 text-dark"></div>
+                                        <div class="col-sm-12 p-1">
+                                        <a href="http://localhost/affiliate2/update-profile.php" rel="noopener noreferrer"><button name="copyaffiliateid" type="submit" class="btn text-light" style="background-color:#16407c;"><i class="bi bi-cloud-arrow-up"></i> Update Profile</button></a>
+                                        </div>
+                                    </div>
+
+
+                            
+                            </div>
+                            <form>
                                 <!-- <table class="table table-responsive-sm table-bordered text-center rounded">
                                     <thead class="pt-5 text-dark bg-warning rounded">
                                     
