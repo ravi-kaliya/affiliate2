@@ -58,6 +58,36 @@ else{
     $userd = "no details found";
 }
 
+//////////////////////////////////////////////////////////////Update Successfully
+
+if(isset( $_POST['updateprofile'])) {
+
+
+    $aff_pincode = filter_var( $_POST["aff_pincode"], FILTER_SANITIZE_STRING );
+    $aff_state = filter_var( $_POST["aff_state"], FILTER_SANITIZE_STRING );
+    $aff_city = filter_var( $_POST["aff_city"], FILTER_SANITIZE_STRING );
+    $aff_address = filter_var( $_POST["aff_address"], FILTER_SANITIZE_STRING );
+    $aff_accnumber = filter_var( $_POST["aff_accnumber"], FILTER_SANITIZE_STRING );
+    $aff_accname = filter_var( $_POST["aff_accname"], FILTER_SANITIZE_STRING );
+    $aff_ifsccode = filter_var( $_POST["aff_ifsccode"], FILTER_SANITIZE_STRING );
+    $aff_pancard = filter_var( $_POST["aff_pancard"], FILTER_SANITIZE_STRING );
+
+
+
+    // $sql = "UPDATE users SET name=?, surname=?, sex=? WHERE id=?";$pdo->prepare($sql)->execute([$name, $surname, $sex, $id]);
+
+
+
+$updatesql = 'UPDATE user_details SET aff_pincode=?, aff_state=?, aff_city=?, aff_address=?, aff_accnumber=?, aff_accname=?, aff_ifsccode=?, aff_pancard=? WHERE aff_uid=?';
+$stmt = $pdo -> prepare($updatesql);
+$stmt -> execute( [$aff_pincode, $aff_state, $aff_city, $aff_address, $aff_accnumber, $aff_accname, $aff_ifsccode, $aff_pancard, $reffid]);
+header('Location: http://localhost/affiliate2/index.php'); 
+
+
+}
+
+
+
 $pdo = null;
 
 ?>
@@ -144,7 +174,7 @@ $pdo = null;
                             <div class=" text-center my-3 text-dark"> 
                                 <h3><?php echo $name;?> Profile</h3>
                             </div>
-                            <form action="https://affiliate.traveliq.in/update.profile.php" method="POST">
+                            <form action="http://localhost/affiliate2/update-profile.php" method="POST">
                             <!-- <div style="overflow-x:auto;"> -->
                                 <div class="row text-center py-2">
                                     <div class="col-lg-3 col-sm-12 p-1 text-dark">
@@ -329,14 +359,14 @@ $pdo = null;
                                         <div class="col-sm-12 p-1 text-dark"></div>
                                         <div class="col-sm-12 p-1 text-dark"></div>
                                         <div class="col-sm-12 p-1">
-                                        <a href="http://localhost/affiliate2/update-profile.php" rel="noopener noreferrer"><button name="copyaffiliateid" type="submit" class="btn text-light" style="background-color:#16407c;"><i class="bi bi-cloud-arrow-up"></i> Update Profile</button></a>
+                                        <button name="updateprofile" type="submit" class="btn text-light" style="background-color:#16407c;"><i class="bi bi-cloud-arrow-up"></i> Update Profile</button>
                                         </div>
                                     </div>
 
 
                             
                             </div>
-                            <form>
+                            </form>
                                 <!-- <table class="table table-responsive-sm table-bordered text-center rounded">
                                     <thead class="pt-5 text-dark bg-warning rounded">
                                     
